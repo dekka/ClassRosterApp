@@ -54,7 +54,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3YJ-kC-zfq"/>
+                    <navigationItem key="navigationItem" id="3YJ-kC-zfq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TPf-7k-gan">
+                            <connections>
+                                <segue destination="mxK-be-Dkh" kind="push" identifier="CreatePerson" id="xQt-Wo-waf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Nve-jT-M7U" id="D2W-gg-7pb"/>
                     </connections>
@@ -145,4 +151,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="xQt-Wo-waf"/>
+    </inferredMetricsTieBreakers>
 </document>

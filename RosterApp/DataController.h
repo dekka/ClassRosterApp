@@ -16,6 +16,7 @@
 -(instancetype)initWithTeachersAndStudents;
 
 -(void)save;
+
 +(DataController *)sharedData;
 
 @end

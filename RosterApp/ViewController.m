@@ -50,15 +50,20 @@
     NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
     Person *myPerson;
     
-    if (myIndexPath.section == 0) {
-       myPerson = [self.myDataController.teacherRoster objectAtIndex:myIndexPath.row];
-        personVC.title = @"Teacher";
+    if ([segue.identifier isEqualToString:@"CreatePerson"]) {
+        myPerson = [Person new];
+        [[[DataController sharedData] studentRoster] addObject:myPerson];
     }
     else {
-       myPerson = [self.myDataController.studentRoster objectAtIndex:myIndexPath.row];
-        personVC.title = @"Student";
+        if (myIndexPath.section == 0) {
+           myPerson = [self.myDataController.teacherRoster objectAtIndex:myIndexPath.row];
+            personVC.title = @"Teacher";
+        }
+        else {
+           myPerson = [self.myDataController.studentRoster objectAtIndex:myIndexPath.row];
+            personVC.title = @"Student";
+        }
     }
-    
     personVC.selectedPerson = myPerson;
     
 }
