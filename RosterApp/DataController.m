@@ -81,8 +81,38 @@
         newPerson.lastName = [studentDictionary objectForKey:@"lastName"];
         [self.studentRoster addObject:newPerson];
     }
+    NSString *plistDocPath = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"People.plist" ];
+
+    [NSKeyedArchiver archiveRootObject:self.teacherRoster toFile:plistDocPath];
+    [NSKeyedArchiver archiveRootObject:self.studentRoster toFile:plistDocPath];
+    
     return self;
 }
+
+-(NSString *)applicationDocumentsDirectory
+{
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+}
+
+-(BOOL)checkForPlistFileInDocs:(NSString*)fileName
+{
+    NSError *error;
+    
+    NSFileManager *myManager = [NSFileManager defaultManager];
+    
+    NSString *pathForPlistInBundle = [[NSBundle mainBundle] pathForResource:@"People" ofType:@"plist"];
+    
+    NSString *pathForPlistInDocs = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:fileName];
+    
+    return [myManager fileExistsAtPath:pathForPlistInDocs];
+    
+    
+    [myManager copyItemAtPath:pathForPlistInBundle toPath:pathForPlistInDocs error:&error];
+    
+    
+    return NO;
+}
+
 
 @end
 

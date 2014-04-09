@@ -99,6 +99,7 @@
 		009C674118F5DB710025F09A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				00AAEDE318F45C3F001B5F34 /* People.plist */,
 				00B6792B18F339A4003B5A6D /* Person.h */,
 				00B6792C18F339A4003B5A6D /* Person.m */,
 			);
@@ -121,6 +122,7 @@
 		009C674318F5DB970025F09A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				00B6790818F33652003B5A6D /* Main.storyboard */,
 				00AAEE8018F4AB9C001B5F34 /* PersonTableViewCell.h */,
 				00AAEE8118F4AB9C001B5F34 /* PersonTableViewCell.m */,
 			);
@@ -166,8 +168,6 @@
 				009C674318F5DB970025F09A /* Views */,
 				00B6790518F33652003B5A6D /* AppDelegate.h */,
 				00B6790618F33652003B5A6D /* AppDelegate.m */,
-				00B6790818F33652003B5A6D /* Main.storyboard */,
-				00AAEDE318F45C3F001B5F34 /* People.plist */,
 				00B6790E18F33652003B5A6D /* Images.xcassets */,
 				00B678FD18F33652003B5A6D /* Supporting Files */,
 			);
