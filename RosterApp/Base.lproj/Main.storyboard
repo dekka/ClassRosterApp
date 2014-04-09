@@ -96,13 +96,12 @@
                                     <action selector="CameraButtonPressed:" destination="mxK-be-Dkh" eventType="touchUpInside" id="APW-tY-Lod"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uu4-Xb-hNA">
-                                <rect key="frame" x="36" y="284" width="248" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dZe-Y0-n0Q">
+                                <rect key="frame" x="47" y="285" width="226" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -115,7 +114,7 @@
                     <navigationItem key="navigationItem" id="SMw-4g-uqx"/>
                     <connections>
                         <outlet property="imageView" destination="Pu2-D0-Y03" id="wF1-oZ-e5i"/>
-                        <outlet property="nameLabel" destination="uu4-Xb-hNA" id="DWz-Nc-N88"/>
+                        <outlet property="nameLabel" destination="dZe-Y0-n0Q" id="kWU-cN-LMI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iKw-RA-GjR" userLabel="First Responder" sceneMemberID="firstResponder"/>

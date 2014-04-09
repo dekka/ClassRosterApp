@@ -22,6 +22,7 @@
     {
         self.firstName = [aDecoder decodeObjectForKey:@"firstName"];
         self.lastName = [aDecoder decodeObjectForKey:@"lastName"];
+        self.avatar = [UIImage imageWithData: [aDecoder decodeObjectForKey:@"avatar"]];
     }
     
     return self;
@@ -31,6 +32,7 @@
 {
     [aCoder encodeObject:self.firstName forKey:@"firstName"];
     [aCoder encodeObject:self.lastName forKey:@"lastName"];
+    [aCoder encodeObject:UIImagePNGRepresentation(self.avatar) forKey:@"avatar"];
 }
 
 

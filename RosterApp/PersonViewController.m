@@ -9,12 +9,13 @@
 #import "PersonViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "Person.h"
+#import "DataController.h"
 
 @interface PersonViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, strong) UIActionSheet *myActionSheet;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *nameLabel;
 
 @end
 
@@ -32,7 +33,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", self.seletectedPerson.firstName, self.seletectedPerson.lastName];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", self.selectedPerson.firstName, self.selectedPerson.lastName];
+    if (_selectedPerson.avatar) {
+        self.imageView.image = self.selectedPerson.avatar;
+    }
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.selectedPerson.firstName = [[_nameLabel.text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] firstObject];
+    self.selectedPerson.lastName = [[_nameLabel.text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] lastObject];
+    
+    [[DataController sharedData] save];
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,7 +112,8 @@
     _imageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     _imageView.layer.cornerRadius = _imageView.frame.size.width/2.0;
     _imageView.layer.masksToBounds = YES;
-    self.seletectedPerson.avatar = _imageView.image;
+    self.selectedPerson.avatar = editedImage;
+    [[DataController sharedData] save];
     
     [self dismissViewControllerAnimated:YES completion:^{
         NSLog(@"Completed");

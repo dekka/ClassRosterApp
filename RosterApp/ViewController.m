@@ -24,7 +24,7 @@
 {
     [super viewDidLoad];
     
-    self.myDataController = [[DataController alloc] initWithTeachersAndStudents];
+    self.myDataController = [[DataController sharedData] initWithTeachersAndStudents];
     
     self.tableView.dataSource = self.myDataController;
     self.tableView.delegate = self;
@@ -59,7 +59,7 @@
         personVC.title = @"Student";
     }
     
-    personVC.seletectedPerson = myPerson;
+    personVC.selectedPerson = myPerson;
     
 }
 

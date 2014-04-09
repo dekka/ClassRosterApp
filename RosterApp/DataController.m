@@ -12,6 +12,16 @@
 
 @implementation DataController
 
++(DataController *)sharedData {
+    static dispatch_once_t pred;
+    static DataController *shared = nil;
+    
+    dispatch_once(&pred, ^{
+        shared = [[DataController alloc] initWithTeachersAndStudents];
+    });
+    return shared;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
@@ -59,32 +69,42 @@
 -(instancetype)initWithTeachersAndStudents
 {
     self = [super init];
-    
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"People" ofType:@"plist"];
-    NSDictionary *peopleDictionary = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-    NSArray *tempTeacherRoster = [peopleDictionary objectForKey:@"Teachers"];
-    NSArray *tempStudentRoster = [peopleDictionary objectForKey:@"Students"];
-    
-    self.teacherRoster = [[NSMutableArray alloc] init];
-    self.studentRoster = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary *teacherDictionary in tempTeacherRoster) {
-        Person *newPerson = [[Person alloc] init];
-        newPerson.firstName = [teacherDictionary objectForKey:@"firstName"];
-        newPerson.lastName = [teacherDictionary objectForKey:@"lastName"];
-        [self.teacherRoster addObject:newPerson];
-    }
-    
-    for (NSDictionary *studentDictionary in tempStudentRoster) {
-        Person *newPerson = [[Person alloc] init];
-        newPerson.firstName = [studentDictionary objectForKey:@"firstName"];
-        newPerson.lastName = [studentDictionary objectForKey:@"lastName"];
-        [self.studentRoster addObject:newPerson];
-    }
-    NSString *plistDocPath = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"People.plist" ];
 
-    [NSKeyedArchiver archiveRootObject:self.teacherRoster toFile:plistDocPath];
-    [NSKeyedArchiver archiveRootObject:self.studentRoster toFile:plistDocPath];
+    NSString *teachersPath = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"Teachers.plist" ];
+    NSString *studentsPath = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"Students.plist" ];
+
+    if ([[NSFileManager defaultManager] fileExistsAtPath:teachersPath] && [[NSFileManager defaultManager] fileExistsAtPath:studentsPath])
+    {
+        self.teacherRoster = [NSKeyedUnarchiver unarchiveObjectWithFile:teachersPath];
+        self.studentRoster = [NSKeyedUnarchiver unarchiveObjectWithFile:studentsPath];
+        NSLog(@"Plist Files Exist");
+        
+    } else {
+        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"People" ofType:@"plist"];
+        NSDictionary *peopleDictionary = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+        NSArray *tempTeacherRoster = [peopleDictionary objectForKey:@"Teachers"];
+        NSArray *tempStudentRoster = [peopleDictionary objectForKey:@"Students"];
+        
+        self.teacherRoster = [[NSMutableArray alloc] init];
+        self.studentRoster = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *teacherDictionary in tempTeacherRoster) {
+            Person *newPerson = [[Person alloc] init];
+            newPerson.firstName = [teacherDictionary objectForKey:@"firstName"];
+            newPerson.lastName = [teacherDictionary objectForKey:@"lastName"];
+            [self.teacherRoster addObject:newPerson];
+        }
+        
+        for (NSDictionary *studentDictionary in tempStudentRoster) {
+            Person *newPerson = [[Person alloc] init];
+            newPerson.firstName = [studentDictionary objectForKey:@"firstName"];
+            newPerson.lastName = [studentDictionary objectForKey:@"lastName"];
+            [self.studentRoster addObject:newPerson];
+        }
+        
+        [NSKeyedArchiver archiveRootObject:self.teacherRoster toFile:teachersPath];
+        [NSKeyedArchiver archiveRootObject:self.studentRoster toFile:studentsPath];
+    }
     
     return self;
 }
@@ -112,6 +132,16 @@
     
     return NO;
 }
+
+-(void)save
+{
+    NSString *teacherPlistPath = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"Teachers.plist"];
+    NSString *studentPlistPath = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"Students.plist"];
+
+    [NSKeyedArchiver archiveRootObject:self.teacherRoster toFile:teacherPlistPath];
+    [NSKeyedArchiver archiveRootObject:self.studentRoster toFile:studentPlistPath];
+}
+
 
 
 @end
