@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0DBFE487-B375-416F-B2DB-0483788A916A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RosterApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DB7F5B74-91FC-408F-81CE-ABC5EC4543CC</key>
+		<string>https://github.com/dekka/ClassRosterApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RosterApp.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DB7F5B74-91FC-408F-81CE-ABC5EC4543CC</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dekka/ClassRosterApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DB7F5B74-91FC-408F-81CE-ABC5EC4543CC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DB7F5B74-91FC-408F-81CE-ABC5EC4543CC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RosterApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		009C674618F5DBCE0025F09A /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009C674518F5DBCE0025F09A /* DataController.m */; };
+		00AAEDE418F45C3F001B5F34 /* People.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00AAEDE318F45C3F001B5F34 /* People.plist */; };
+		00AAEE7A18F48D54001B5F34 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AAEE7918F48D54001B5F34 /* PersonViewController.m */; };
+		00AAEE7C18F49B27001B5F34 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AAEE7B18F49B27001B5F34 /* AssetsLibrary.framework */; };
+		00AAEE8218F4AB9C001B5F34 /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AAEE8118F4AB9C001B5F34 /* PersonTableViewCell.m */; };
+		00B678F718F33652003B5A6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B678F618F33652003B5A6D /* Foundation.framework */; };
+		00B678F918F33652003B5A6D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B678F818F33652003B5A6D /* CoreGraphics.framework */; };
+		00B678FB18F33652003B5A6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B678FA18F33652003B5A6D /* UIKit.framework */; };
+		00B6790118F33652003B5A6D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00B678FF18F33652003B5A6D /* InfoPlist.strings */; };
+		00B6790318F33652003B5A6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6790218F33652003B5A6D /* main.m */; };
+		00B6790718F33652003B5A6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6790618F33652003B5A6D /* AppDelegate.m */; };
+		00B6790A18F33652003B5A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B6790818F33652003B5A6D /* Main.storyboard */; };
+		00B6790D18F33652003B5A6D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6790C18F33652003B5A6D /* ViewController.m */; };
+		00B6790F18F33652003B5A6D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00B6790E18F33652003B5A6D /* Images.xcassets */; };
+		00B6791618F33652003B5A6D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B6791518F33652003B5A6D /* XCTest.framework */; };
+		00B6791718F33652003B5A6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B678F618F33652003B5A6D /* Foundation.framework */; };
+		00B6791818F33652003B5A6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B678FA18F33652003B5A6D /* UIKit.framework */; };
+		00B6792018F33652003B5A6D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00B6791E18F33652003B5A6D /* InfoPlist.strings */; };
+		00B6792218F33652003B5A6D /* RosterAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6792118F33652003B5A6D /* RosterAppTests.m */; };
+		00B6792D18F339A4003B5A6D /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6792C18F339A4003B5A6D /* Person.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00B6791918F33652003B5A6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00B678EB18F33652003B5A6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00B678F218F33652003B5A6D;
+			remoteInfo = RosterApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		009C674418F5DBCE0025F09A /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
+		009C674518F5DBCE0025F09A /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
+		00AAEDE318F45C3F001B5F34 /* People.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = People.plist; sourceTree = "<group>"; };
+		00AAEE7818F48D54001B5F34 /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
+		00AAEE7918F48D54001B5F34 /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
+		00AAEE7B18F49B27001B5F34 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		00AAEE8018F4AB9C001B5F34 /* PersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonTableViewCell.h; path = ../PersonTableViewCell.h; sourceTree = "<group>"; };
+		00AAEE8118F4AB9C001B5F34 /* PersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonTableViewCell.m; path = ../PersonTableViewCell.m; sourceTree = "<group>"; };
+		00B678F318F33652003B5A6D /* RosterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RosterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B678F618F33652003B5A6D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		00B678F818F33652003B5A6D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		00B678FA18F33652003B5A6D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		00B678FE18F33652003B5A6D /* RosterApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RosterApp-Info.plist"; sourceTree = "<group>"; };
+		00B6790018F33652003B5A6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		00B6790218F33652003B5A6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		00B6790418F33652003B5A6D /* RosterApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RosterApp-Prefix.pch"; sourceTree = "<group>"; };
+		00B6790518F33652003B5A6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		00B6790618F33652003B5A6D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		00B6790918F33652003B5A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		00B6790B18F33652003B5A6D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		00B6790C18F33652003B5A6D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		00B6790E18F33652003B5A6D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		00B6791418F33652003B5A6D /* RosterAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RosterAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B6791518F33652003B5A6D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		00B6791D18F33652003B5A6D /* RosterAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RosterAppTests-Info.plist"; sourceTree = "<group>"; };
+		00B6791F18F33652003B5A6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		00B6792118F33652003B5A6D /* RosterAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RosterAppTests.m; sourceTree = "<group>"; };
+		00B6792B18F339A4003B5A6D /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		00B6792C18F339A4003B5A6D /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00B678F018F33652003B5A6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00AAEE7C18F49B27001B5F34 /* AssetsLibrary.framework in Frameworks */,
+				00B678F918F33652003B5A6D /* CoreGraphics.framework in Frameworks */,
+				00B678FB18F33652003B5A6D /* UIKit.framework in Frameworks */,
+				00B678F718F33652003B5A6D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00B6791118F33652003B5A6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00B6791618F33652003B5A6D /* XCTest.framework in Frameworks */,
+				00B6791818F33652003B5A6D /* UIKit.framework in Frameworks */,
+				00B6791718F33652003B5A6D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		009C674118F5DB710025F09A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				00B6792B18F339A4003B5A6D /* Person.h */,
+				00B6792C18F339A4003B5A6D /* Person.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		009C674218F5DB860025F09A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				00AAEE7818F48D54001B5F34 /* PersonViewController.h */,
+				00AAEE7918F48D54001B5F34 /* PersonViewController.m */,
+				00B6790B18F33652003B5A6D /* ViewController.h */,
+				00B6790C18F33652003B5A6D /* ViewController.m */,
+				009C674418F5DBCE0025F09A /* DataController.h */,
+				009C674518F5DBCE0025F09A /* DataController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		009C674318F5DB970025F09A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				00AAEE8018F4AB9C001B5F34 /* PersonTableViewCell.h */,
+				00AAEE8118F4AB9C001B5F34 /* PersonTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		00B678EA18F33652003B5A6D = {
+			isa = PBXGroup;
+			children = (
+				00B678FC18F33652003B5A6D /* RosterApp */,
+				00B6791B18F33652003B5A6D /* RosterAppTests */,
+				00B678F518F33652003B5A6D /* Frameworks */,
+				00B678F418F33652003B5A6D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		00B678F418F33652003B5A6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00B678F318F33652003B5A6D /* RosterApp.app */,
+				00B6791418F33652003B5A6D /* RosterAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00B678F518F33652003B5A6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00AAEE7B18F49B27001B5F34 /* AssetsLibrary.framework */,
+				00B678F618F33652003B5A6D /* Foundation.framework */,
+				00B678F818F33652003B5A6D /* CoreGraphics.framework */,
+				00B678FA18F33652003B5A6D /* UIKit.framework */,
+				00B6791518F33652003B5A6D /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		00B678FC18F33652003B5A6D /* RosterApp */ = {
+			isa = PBXGroup;
+			children = (
+				009C674118F5DB710025F09A /* Model */,
+				009C674218F5DB860025F09A /* Controller */,
+				009C674318F5DB970025F09A /* Views */,
+				00B6790518F33652003B5A6D /* AppDelegate.h */,
+				00B6790618F33652003B5A6D /* AppDelegate.m */,
+				00B6790818F33652003B5A6D /* Main.storyboard */,
+				00AAEDE318F45C3F001B5F34 /* People.plist */,
+				00B6790E18F33652003B5A6D /* Images.xcassets */,
+				00B678FD18F33652003B5A6D /* Supporting Files */,
+			);
+			path = RosterApp;
+			sourceTree = "<group>";
+		};
+		00B678FD18F33652003B5A6D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00B678FE18F33652003B5A6D /* RosterApp-Info.plist */,
+				00B678FF18F33652003B5A6D /* InfoPlist.strings */,
+				00B6790218F33652003B5A6D /* main.m */,
+				00B6790418F33652003B5A6D /* RosterApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00B6791B18F33652003B5A6D /* RosterAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				00B6792118F33652003B5A6D /* RosterAppTests.m */,
+				00B6791C18F33652003B5A6D /* Supporting Files */,
+			);
+			path = RosterAppTests;
+			sourceTree = "<group>";
+		};
+		00B6791C18F33652003B5A6D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00B6791D18F33652003B5A6D /* RosterAppTests-Info.plist */,
+				00B6791E18F33652003B5A6D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00B678F218F33652003B5A6D /* RosterApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00B6792518F33652003B5A6D /* Build configuration list for PBXNativeTarget "RosterApp" */;
+			buildPhases = (
+				00B678EF18F33652003B5A6D /* Sources */,
+				00B678F018F33652003B5A6D /* Frameworks */,
+				00B678F118F33652003B5A6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RosterApp;
+			productName = RosterApp;
+			productReference = 00B678F318F33652003B5A6D /* RosterApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		00B6791318F33652003B5A6D /* RosterAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00B6792818F33652003B5A6D /* Build configuration list for PBXNativeTarget "RosterAppTests" */;
+			buildPhases = (
+				00B6791018F33652003B5A6D /* Sources */,
+				00B6791118F33652003B5A6D /* Frameworks */,
+				00B6791218F33652003B5A6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00B6791A18F33652003B5A6D /* PBXTargetDependency */,
+			);
+			name = RosterAppTests;
+			productName = RosterAppTests;
+			productReference = 00B6791418F33652003B5A6D /* RosterAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00B678EB18F33652003B5A6D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Reed Sweeney";
+				TargetAttributes = {
+					00B6791318F33652003B5A6D = {
+						TestTargetID = 00B678F218F33652003B5A6D;
+					};
+				};
+			};
+			buildConfigurationList = 00B678EE18F33652003B5A6D /* Build configuration list for PBXProject "RosterApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00B678EA18F33652003B5A6D;
+			productRefGroup = 00B678F418F33652003B5A6D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00B678F218F33652003B5A6D /* RosterApp */,
+				00B6791318F33652003B5A6D /* RosterAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00B678F118F33652003B5A6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00B6790F18F33652003B5A6D /* Images.xcassets in Resources */,
+				00B6790118F33652003B5A6D /* InfoPlist.strings in Resources */,
+				00AAEDE418F45C3F001B5F34 /* People.plist in Resources */,
+				00B6790A18F33652003B5A6D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00B6791218F33652003B5A6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00B6792018F33652003B5A6D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00B678EF18F33652003B5A6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00AAEE7A18F48D54001B5F34 /* PersonViewController.m in Sources */,
+				00B6790D18F33652003B5A6D /* ViewController.m in Sources */,
+				00AAEE8218F4AB9C001B5F34 /* PersonTableViewCell.m in Sources */,
+				00B6790718F33652003B5A6D /* AppDelegate.m in Sources */,
+				009C674618F5DBCE0025F09A /* DataController.m in Sources */,
+				00B6792D18F339A4003B5A6D /* Person.m in Sources */,
+				00B6790318F33652003B5A6D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00B6791018F33652003B5A6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00B6792218F33652003B5A6D /* RosterAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00B6791A18F33652003B5A6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00B678F218F33652003B5A6D /* RosterApp */;
+			targetProxy = 00B6791918F33652003B5A6D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		00B678FF18F33652003B5A6D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00B6790018F33652003B5A6D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		00B6790818F33652003B5A6D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00B6790918F33652003B5A6D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		00B6791E18F33652003B5A6D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00B6791F18F33652003B5A6D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		00B6792318F33652003B5A6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		00B6792418F33652003B5A6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		00B6792618F33652003B5A6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RosterApp/RosterApp-Prefix.pch";
+				INFOPLIST_FILE = "RosterApp/RosterApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		00B6792718F33652003B5A6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RosterApp/RosterApp-Prefix.pch";
+				INFOPLIST_FILE = "RosterApp/RosterApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		00B6792918F33652003B5A6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RosterApp.app/RosterApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RosterApp/RosterApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RosterAppTests/RosterAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		00B6792A18F33652003B5A6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RosterApp.app/RosterApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RosterApp/RosterApp-Prefix.pch";
+				INFOPLIST_FILE = "RosterAppTests/RosterAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00B678EE18F33652003B5A6D /* Build configuration list for PBXProject "RosterApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00B6792318F33652003B5A6D /* Debug */,
+				00B6792418F33652003B5A6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00B6792518F33652003B5A6D /* Build configuration list for PBXNativeTarget "RosterApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00B6792618F33652003B5A6D /* Debug */,
+				00B6792718F33652003B5A6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00B6792818F33652003B5A6D /* Build configuration list for PBXNativeTarget "RosterAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00B6792918F33652003B5A6D /* Debug */,
+				00B6792A18F33652003B5A6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00B678EB18F33652003B5A6D /* Project object */;
+}
