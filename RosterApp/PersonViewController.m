@@ -15,12 +15,12 @@
 @interface PersonViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) UIActionSheet *myActionSheet;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UITextField *nameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *fullNameTextField;
 @property (weak, nonatomic) IBOutlet UIView *primaryView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextField *githubField;
 @property (weak, nonatomic) IBOutlet UITextField *twitterField;
+@property (weak, nonatomic) IBOutlet UIButton *photoButton;
 
 @end
 
@@ -38,28 +38,55 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", self.selectedPerson.firstName, self.selectedPerson.lastName];
+    if (self.selectedPerson.firstName && self.selectedPerson.lastName) {
+        self.fullNameTextField.text = [NSString stringWithFormat:@"%@ %@", self.selectedPerson.firstName, self.selectedPerson.lastName];
+    }
     self.githubField.text = self.selectedPerson.github;
     self.twitterField.text = self.selectedPerson.twitter;
     
     if (_selectedPerson.avatar)
     {
-        self.imageView.image = self.selectedPerson.avatar;
+        _photoButton.backgroundColor = [UIColor clearColor];
+        [self.photoButton setBackgroundImage:self.selectedPerson.avatar forState:UIControlStateNormal] ;
     }
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.nameLabel.delegate = self;
+    self.fullNameTextField.delegate = self;
     self.scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+    self.primaryView.backgroundColor = self.selectedPerson.personColor;
     
+    NSMutableArray *sliders = [NSMutableArray new];
+    for (id subView in self.primaryView.subviews) {
+        if ([subView isKindOfClass:[UISlider class]]) {
+            [sliders addObject:subView];
+        }
+    }
     
+    UISlider *sliderR = [sliders objectAtIndex:0];
+    UISlider *sliderG = [sliders objectAtIndex:1];
+    UISlider *sliderB = [sliders objectAtIndex:2];
+    
+    CGFloat r,g,b,a;
+    [self.selectedPerson.personColor getRed:&r green:&g blue:&b alpha:&a];
+    
+    [sliderR setValue:r animated:YES];
+    [sliderG setValue:g animated:YES];
+    [sliderB setValue:b animated:YES];
+
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    self.selectedPerson.firstName = [[_nameLabel.text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] firstObject];
-    self.selectedPerson.lastName = [[_nameLabel.text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] lastObject];
-    self.selectedPerson.github = _githubField.text;
-    self.selectedPerson.twitter = _twitterField.text;
+    
+    if (!_fullNameTextField.text.length) {
+        [[[DataController sharedData] studentRoster] removeObject:self.selectedPerson];
+    } else {
+        self.selectedPerson.firstName = [[_fullNameTextField.text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] firstObject];
+        self.selectedPerson.lastName = [[_fullNameTextField.text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] lastObject];
+        self.selectedPerson.github = _githubField.text;
+        self.selectedPerson.twitter = _twitterField.text;   
+    }
+    
     
     [[DataController sharedData] save];
 }
@@ -125,9 +152,10 @@
 {
     
     UIImage *editedImage = [info objectForKey:UIImagePickerControllerEditedImage];
-    _imageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    _imageView.layer.cornerRadius = _imageView.frame.size.width/2.0;
-    _imageView.layer.masksToBounds = YES;
+    _photoButton.backgroundColor = [UIColor clearColor];
+    [_photoButton setBackgroundImage:[info objectForKey:UIImagePickerControllerOriginalImage] forState:UIControlStateNormal];
+    _photoButton.imageView.layer.cornerRadius = _photoButton.frame.size.width/2.0;
+    _photoButton.imageView.layer.masksToBounds = YES;
     self.selectedPerson.avatar = editedImage;
     [[DataController sharedData] save];
     
@@ -195,6 +223,29 @@
 {
     [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
 
+}
+
+-(IBAction)sliderSlid:(UISlider *)sender
+{
+    CGFloat r,g,b,a;
+    [self.selectedPerson.personColor getRed:&r green:&g blue:&b alpha:&a];
+    
+    switch (sender.tag) {
+        case 1:
+            r = sender.value;
+            break;
+        case 2:
+            g = sender.value;
+            break;
+        case 3:
+            b = sender.value;
+    }
+    
+    UIColor *newColor = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
+    self.selectedPerson.personColor = newColor;
+    self.primaryView.backgroundColor = newColor;
+    [[DataController sharedData] save];
+    
 }
 
 @end

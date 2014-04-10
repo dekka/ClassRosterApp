@@ -25,6 +25,7 @@
         self.avatar = [UIImage imageWithData: [aDecoder decodeObjectForKey:@"avatar"]];
         self.github = [aDecoder decodeObjectForKey:@"github"];
         self.twitter = [aDecoder decodeObjectForKey:@"twitter"];
+        self.personColor = [aDecoder decodeObjectForKey:@"personColor"];
     }
     
     return self;
@@ -37,6 +38,7 @@
     [aCoder encodeObject:UIImagePNGRepresentation(self.avatar) forKey:@"avatar"];
     [aCoder encodeObject:self.github forKey:@"github"];
     [aCoder encodeObject:self.twitter forKey:@"twitter"];
+    [aCoder encodeObject:self.personColor forKey:@"personColor"];
     
 }
 

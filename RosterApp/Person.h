@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) NSString *firstName, *lastName, *github, *twitter;
 
+@property (nonatomic, strong) UIColor *personColor;
+
 @property (nonatomic, strong) UIImage *avatar;
 
 @end

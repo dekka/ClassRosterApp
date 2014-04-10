@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0005613118F760EB008D2BCC /* greyperson.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0005613018F760EB008D2BCC /* greyperson.jpg */; };
 		004506C718F73A68000FA3EF /* twitter_small_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 004506C618F73A68000FA3EF /* twitter_small_icon.jpg */; };
 		004506C918F73A6F000FA3EF /* github_small_icon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 004506C818F73A6F000FA3EF /* github_small_icon.jpeg */; };
 		004506CC18F73F3E000FA3EF /* ScrollTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 004506CB18F73F3E000FA3EF /* ScrollTopView.m */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0005613018F760EB008D2BCC /* greyperson.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = greyperson.jpg; sourceTree = "<group>"; };
 		004506C618F73A68000FA3EF /* twitter_small_icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = twitter_small_icon.jpg; sourceTree = "<group>"; };
 		004506C818F73A6F000FA3EF /* github_small_icon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = github_small_icon.jpeg; sourceTree = "<group>"; };
 		004506CA18F73F3E000FA3EF /* ScrollTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollTopView.h; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		009C674318F5DB970025F09A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0005613018F760EB008D2BCC /* greyperson.jpg */,
 				004506C818F73A6F000FA3EF /* github_small_icon.jpeg */,
 				004506C618F73A68000FA3EF /* twitter_small_icon.jpg */,
 				00B6790818F33652003B5A6D /* Main.storyboard */,
@@ -292,6 +295,7 @@
 			files = (
 				00B6790F18F33652003B5A6D /* Images.xcassets in Resources */,
 				004506C918F73A6F000FA3EF /* github_small_icon.jpeg in Resources */,
+				0005613118F760EB008D2BCC /* greyperson.jpg in Resources */,
 				00B6790118F33652003B5A6D /* InfoPlist.strings in Resources */,
 				004506C718F73A68000FA3EF /* twitter_small_icon.jpg in Resources */,
 				00AAEDE418F45C3F001B5F34 /* People.plist in Resources */,

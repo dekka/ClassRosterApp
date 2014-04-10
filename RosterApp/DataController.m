@@ -63,6 +63,8 @@
     
     cell.cellImageView.image = myPerson.avatar;
     
+    cell.cellContentView.backgroundColor = myPerson.personColor;
+    
     return cell;
 }
 
@@ -140,6 +142,17 @@
 
     [NSKeyedArchiver archiveRootObject:self.teacherRoster toFile:teacherPlistPath];
     [NSKeyedArchiver archiveRootObject:self.studentRoster toFile:studentPlistPath];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSLog(@"Deleting Cell At Row: %d", indexPath.row);
+        [self.studentRoster removeObject:[self.studentRoster objectAtIndex:indexPath.row]];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        [self save];
+    }
+    
 }
 
 
