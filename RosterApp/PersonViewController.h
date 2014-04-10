@@ -11,6 +11,6 @@
 
 @interface PersonViewController : UIViewController
 
-@property (nonatomic, strong) Person *selectedPerson;
+@property (nonatomic, weak) Person *selectedPerson;
 
 @end

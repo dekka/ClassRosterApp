@@ -114,7 +114,7 @@
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
 }
 
--(BOOL)checkForPlistFileInDocs:(NSString*)fileName
+-(BOOL)checkForPlistFileInDocs:(NSString *)fileName
 {
     NSError *error;
     
@@ -141,7 +141,6 @@
     [NSKeyedArchiver archiveRootObject:self.teacherRoster toFile:teacherPlistPath];
     [NSKeyedArchiver archiveRootObject:self.studentRoster toFile:studentPlistPath];
 }
-
 
 
 @end

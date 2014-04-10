@@ -10,7 +10,7 @@
 
 @interface Person : NSObject <NSCoding>
 
-@property (nonatomic, strong) NSString *firstName, *lastName;
+@property (nonatomic, strong) NSString *firstName, *lastName, *github, *twitter;
 
 @property (nonatomic, strong) UIImage *avatar;
 

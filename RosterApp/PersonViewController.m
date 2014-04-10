@@ -10,12 +10,17 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "Person.h"
 #import "DataController.h"
+#import "ScrollTopView.h"
 
-@interface PersonViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
+@interface PersonViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) UIActionSheet *myActionSheet;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextField *nameLabel;
+@property (weak, nonatomic) IBOutlet UIView *primaryView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UITextField *githubField;
+@property (weak, nonatomic) IBOutlet UITextField *twitterField;
 
 @end
 
@@ -34,9 +39,18 @@
 {
     [super viewDidLoad];
     self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", self.selectedPerson.firstName, self.selectedPerson.lastName];
-    if (_selectedPerson.avatar) {
+    self.githubField.text = self.selectedPerson.github;
+    self.twitterField.text = self.selectedPerson.twitter;
+    
+    if (_selectedPerson.avatar)
+    {
         self.imageView.image = self.selectedPerson.avatar;
     }
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.nameLabel.delegate = self;
+    self.scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+    
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -44,6 +58,8 @@
     [super viewWillDisappear:animated];
     self.selectedPerson.firstName = [[_nameLabel.text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] firstObject];
     self.selectedPerson.lastName = [[_nameLabel.text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] lastObject];
+    self.selectedPerson.github = _githubField.text;
+    self.selectedPerson.twitter = _twitterField.text;
     
     [[DataController sharedData] save];
 }
@@ -143,6 +159,43 @@
     }];
 }
 
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+//    for (UIControl *control in self.view.subviews) {
+//        if ([control isKindOfClass:[UITextField class]])
+//            [control endEditing:YES];
+//    }
+    [self.primaryView endEditing:YES];
+    
+}
+
+-(IBAction)sharePhoto:(id)sender
+{
+    UIActivityViewController *sharePhotoVC = [[UIActivityViewController alloc] initWithActivityItems:@[self.selectedPerson.avatar, [NSURL URLWithString:@"http://www.reedsweeney.com"]] applicationActivities:nil];
+    [self presentViewController:sharePhotoVC animated:YES completion:nil];
+    
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return NO;
+    
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self.scrollView setContentOffset:CGPointMake(0, textField.frame.origin.y - 200) animated:YES];
+    
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+
+}
 
 @end
 
