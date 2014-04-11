@@ -12,6 +12,7 @@
 
 @implementation DataController
 
+
 +(DataController *)sharedData {
     static dispatch_once_t pred;
     static DataController *shared = nil;
@@ -62,6 +63,8 @@
     cell.cellLabel.text = myPerson.firstName;
     
     cell.cellImageView.image = myPerson.avatar;
+    cell.cellImageView.layer.cornerRadius = cell.cellImageView.frame.size.width/3.0;
+    cell.cellImageView.layer.masksToBounds = YES;
     
     cell.cellContentView.backgroundColor = myPerson.personColor;
     
@@ -146,11 +149,20 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSLog(@"Deleting Cell At Row: %d", indexPath.row);
-        [self.studentRoster removeObject:[self.studentRoster objectAtIndex:indexPath.row]];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-        [self save];
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        if (indexPath.section == 0) {
+        
+            [self.teacherRoster removeObject:[self.teacherRoster objectAtIndex:indexPath.row]];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        
+        }
+        
+        else {
+            [self.studentRoster removeObject:[self.studentRoster objectAtIndex:indexPath.row]];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        }
+        [tableView reloadData];
     }
     
 }

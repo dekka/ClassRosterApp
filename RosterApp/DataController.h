@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray *studentRoster;
 @property (nonatomic, strong) NSMutableArray *teacherRoster;
+@property (nonatomic, strong) UITableView *section;
 
 -(instancetype)initWithTeachersAndStudents;
 

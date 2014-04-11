@@ -105,6 +105,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0005613218F84086008D2BCC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0005613018F760EB008D2BCC /* greyperson.jpg */,
+				004506C818F73A6F000FA3EF /* github_small_icon.jpeg */,
+				004506C618F73A68000FA3EF /* twitter_small_icon.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		009C674118F5DB710025F09A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,14 +128,12 @@
 		009C674218F5DB860025F09A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				00AAEE7818F48D54001B5F34 /* PersonViewController.h */,
-				00AAEE7918F48D54001B5F34 /* PersonViewController.m */,
-				004506CA18F73F3E000FA3EF /* ScrollTopView.h */,
-				004506CB18F73F3E000FA3EF /* ScrollTopView.m */,
-				00B6790B18F33652003B5A6D /* ViewController.h */,
-				00B6790C18F33652003B5A6D /* ViewController.m */,
 				009C674418F5DBCE0025F09A /* DataController.h */,
 				009C674518F5DBCE0025F09A /* DataController.m */,
+				00AAEE7818F48D54001B5F34 /* PersonViewController.h */,
+				00AAEE7918F48D54001B5F34 /* PersonViewController.m */,
+				00B6790B18F33652003B5A6D /* ViewController.h */,
+				00B6790C18F33652003B5A6D /* ViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -133,12 +141,11 @@
 		009C674318F5DB970025F09A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0005613018F760EB008D2BCC /* greyperson.jpg */,
-				004506C818F73A6F000FA3EF /* github_small_icon.jpeg */,
-				004506C618F73A68000FA3EF /* twitter_small_icon.jpg */,
 				00B6790818F33652003B5A6D /* Main.storyboard */,
 				00AAEE8018F4AB9C001B5F34 /* PersonTableViewCell.h */,
 				00AAEE8118F4AB9C001B5F34 /* PersonTableViewCell.m */,
+				004506CA18F73F3E000FA3EF /* ScrollTopView.h */,
+				004506CB18F73F3E000FA3EF /* ScrollTopView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -177,6 +184,7 @@
 		00B678FC18F33652003B5A6D /* RosterApp */ = {
 			isa = PBXGroup;
 			children = (
+				0005613218F84086008D2BCC /* Images */,
 				009C674118F5DB710025F09A /* Model */,
 				009C674218F5DB860025F09A /* Controller */,
 				009C674318F5DB970025F09A /* Views */,

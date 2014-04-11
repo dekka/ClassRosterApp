@@ -53,6 +53,8 @@
     self.fullNameTextField.delegate = self;
     self.scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
     self.primaryView.backgroundColor = self.selectedPerson.personColor;
+    _photoButton.imageView.layer.cornerRadius = _photoButton.imageView.frame.size.width/3.0;
+    _photoButton.imageView.layer.masksToBounds = YES;
     
     NSMutableArray *sliders = [NSMutableArray new];
     for (id subView in self.primaryView.subviews) {
@@ -154,7 +156,7 @@
     UIImage *editedImage = [info objectForKey:UIImagePickerControllerEditedImage];
     _photoButton.backgroundColor = [UIColor clearColor];
     [_photoButton setBackgroundImage:[info objectForKey:UIImagePickerControllerOriginalImage] forState:UIControlStateNormal];
-    _photoButton.imageView.layer.cornerRadius = _photoButton.frame.size.width/2.0;
+    _photoButton.imageView.layer.cornerRadius = _photoButton.imageView.frame.size.width/3.0;
     _photoButton.imageView.layer.masksToBounds = YES;
     self.selectedPerson.avatar = editedImage;
     [[DataController sharedData] save];
@@ -244,7 +246,6 @@
     UIColor *newColor = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
     self.selectedPerson.personColor = newColor;
     self.primaryView.backgroundColor = newColor;
-    [[DataController sharedData] save];
     
 }
 
